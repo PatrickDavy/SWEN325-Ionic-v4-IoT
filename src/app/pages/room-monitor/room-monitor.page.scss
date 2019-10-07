@@ -1,12 +1,16 @@
-.active{
-  background-color: #64ff63;
-}
-
-.inactive{
-  background-color: #ff5458;
+.dynamic-card{
+  background-color: var(--colourvar);
+  height: 105px
 }
 
 .imgSize {
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 75px;
+  height: 75px;
+}
+
+.text-position {
+  padding-top: 10px;
 }

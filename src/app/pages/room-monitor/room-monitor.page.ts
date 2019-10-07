@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MqttService } from '../../service/mqtt.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-room-monitor',
@@ -7,6 +8,9 @@ import { MqttService } from '../../service/mqtt.service';
   styleUrls: ['./room-monitor.page.scss'],
 })
 export class RoomMonitorPage {
-  constructor(public MQTT: MqttService) {
+  constructor(public MQTT: MqttService, public sanitizer: DomSanitizer) {
+  }
+  getDynamicCardColour(colour) {
+    return this.sanitizer.bypassSecurityTrustStyle(`--colourvar: ${colour}`);
   }
 }
