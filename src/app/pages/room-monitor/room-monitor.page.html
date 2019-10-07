@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      HomePage
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="horizontal-cards">
+    <p>Most Recent Location: {{this.MQTT.getRecentLocation()}}</p>
+
+    <ion-card *ngIf="this.MQTT.getLiving().active == 'No'" class="inactive">
+      <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
+      <ion-card-content>
+        <p>This room was last active</p>
+        <p>{{this.MQTT.getLiving().time}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getLiving().active == 'Yes'" class="active">
+      <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getLiving().roomName}} </ion-card-header>
+      <ion-card-content>this room is currently active</ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getLiving().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getKitchen().active == 'No'" class="inactive">
+      <ion-img class="imgSize" [src]=this.MQTT.getKitchen().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getKitchen().roomName}} </ion-card-header>
+      <ion-card-content>
+        <p>This room was last active</p>
+        <p>{{this.MQTT.getKitchen().time}}</p>
+      </ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getKitchen().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getKitchen().active == 'Yes'" class="active">
+      <ion-img class="imgSize" [src]=this.MQTT.getKitchen().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getKitchen().roomName}} </ion-card-header>
+      <ion-card-content>this room is currently active</ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getKitchen().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getDining().active == 'No'" class="inactive">
+      <ion-img class="imgSize" [src]=this.MQTT.getDining().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getDining().roomName}} </ion-card-header>
+      <ion-card-content>
+        <p>This room was last active</p>
+        <p>{{this.MQTT.getDining().time}}</p>
+      </ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getDining().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getDining().active == 'Yes'" class="active">
+      <ion-img class="imgSize" [src]=this.MQTT.getDining().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getDining().roomName}} </ion-card-header>
+      <ion-card-content>this room is currently active</ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getDining().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getToilet().active == 'No'" class="inactive">
+      <ion-img class="imgSize" [src]=this.MQTT.getToilet().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getToilet().roomName}} </ion-card-header>
+      <ion-card-content>
+        <p>This room was last active</p>
+        <p>{{this.MQTT.getToilet().time}}</p>
+      </ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getToilet().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getToilet().active == 'Yes'" class="active">
+      <ion-img class="imgSize" [src]=this.MQTT.getToilet().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getToilet().roomName}} </ion-card-header>
+      <ion-card-content>this room is currently active</ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getToilet().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getBedroom().active == 'No'" class="inactive">
+      <ion-img class="imgSize" [src]=this.MQTT.getBedroom().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getBedroom().roomName}} </ion-card-header>
+      <ion-card-content>
+        <p>This room was last active</p>
+        <p>{{this.MQTT.getBedroom().time}}</p>
+      </ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getBedroom().batteryStatus}}%</ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="this.MQTT.getBedroom().active == 'Yes'" class="active">
+      <ion-img class="imgSize" [src]=this.MQTT.getBedroom().image></ion-img>
+      <ion-card-header>Room Name: {{this.MQTT.getBedroom().roomName}} </ion-card-header>
+      <ion-card-content>this room is currently active</ion-card-content>
+      <ion-card-content>Battery Status: {{this.MQTT.getBedroom().batteryStatus}}%</ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

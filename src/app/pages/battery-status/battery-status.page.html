@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Battery Status
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getLiving().color)">
+    <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
+    <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getLiving().batteryStatus / 100 * 72 +'px')"></div>
+  </ion-card>
+
+  <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getKitchen().color)">
+    <ion-img class="imgSize" [src]=this.MQTT.getKitchen().image></ion-img>
+    <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getKitchen().batteryStatus / 100 * 72 +'px')"></div>
+  </ion-card>
+
+  <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getDining().color)">
+    <ion-img class="imgSize" [src]=this.MQTT.getDining().image></ion-img>
+    <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getDining().batteryStatus / 100 * 72 +'px')"></div>
+  </ion-card>
+
+  <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getToilet().color)">
+    <ion-img class="imgSize" [src]=this.MQTT.getToilet().image></ion-img>
+    <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getToilet().batteryStatus / 100 * 72 +'px')"></div>
+  </ion-card>
+
+  <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getBedroom().color)">
+    <ion-img class="imgSize" [src]=this.MQTT.getBedroom().image></ion-img>
+    <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getBedroom().batteryStatus / 100 * 72 +'px')"></div>
+  </ion-card>
+</ion-content>

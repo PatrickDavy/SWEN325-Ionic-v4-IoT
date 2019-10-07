@@ -1,3 +1,21 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="room-monitor">
+          <ion-icon name="Home"></ion-icon>
+          <ion-label>home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="battery-status">
+          <ion-icon name="battery-charging"></ion-icon>
+          <ion-label>Battery</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="stats">
+          <ion-icon name="stats"></ion-icon>
+  <ion-label>Stats</ion-label>
+  </ion-tab-button>
+  </ion-tab-bar>
+  </ion-tabs>
 </ion-app>
