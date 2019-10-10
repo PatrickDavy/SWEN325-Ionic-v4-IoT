@@ -24,11 +24,11 @@ export class StatsPage {
   }
 
   ionViewDidEnter() {
-    this.createBarChart();
+    this.createLineChart();
     this.createPieChart();
   }
 
-  createBarChart() {
+  createLineChart() {
     this.bars = new Chart(this.barChart.nativeElement, {
       type: 'line',
       data: {
@@ -37,35 +37,35 @@ export class StatsPage {
             [{
           label: 'living',
           data: this.MQTT.getLiving().batteryArray,
-          // backgroundColor: this.colorArray[0], // array should have same number of elements as number of dataset
+          backgroundColor: 'rgba(0, 0, 0, 0)', // array should have same number of elements as number of dataset
           borderColor: this.colorArray[0], // array should have same number of elements as number of dataset
           borderWidth: 1
             },
           {
             label: 'kitchen',
             data: this.MQTT.getKitchen().batteryArray,
-            // backgroundColor: this.colorArray[1], // array should have same number of elements as number of dataset
+            backgroundColor: 'rgba(0, 0, 0, 0)', // array should have same number of elements as number of dataset
             borderColor: this.colorArray[1], // array should have same number of elements as number of dataset
             borderWidth: 1
           },
           {
             label: 'dining',
             data: this.MQTT.getDining().batteryArray,
-            // backgroundColor: this.colorArray[2], // array should have same number of elements as number of dataset
+            backgroundColor: 'rgba(0, 0, 0, 0)', // array should have same number of elements as number of dataset
             borderColor: this.colorArray[2], // array should have same number of elements as number of dataset
             borderWidth: 1
           },
           {
             label: 'toilet',
             data: this.MQTT.getToilet().batteryArray,
-            // backgroundColor: this.colorArray[3], // array should have same number of elements as number of dataset
+            backgroundColor: 'rgba(0, 0, 0, 0)', // array should have same number of elements as number of dataset
             borderColor: this.colorArray[3], // array should have same number of elements as number of dataset
             borderWidth: 1
           },
           {
             label: 'bedroom',
             data: this.MQTT.getBedroom().batteryArray,
-            // backgroundColor: this.colorArray[4], // array should have same number of elements as number of dataset
+            backgroundColor: 'rgba(0, 0, 0, 0)', // array should have same number of elements as number of dataset
             borderColor: this.colorArray[4], // array should have same number of elements as number of dataset
             borderWidth: 1
           }]

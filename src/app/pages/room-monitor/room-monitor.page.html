@@ -6,9 +6,6 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
-
-
     <p>Most Recent Location: {{this.MQTT.getRecentLocation()}}</p>
 
     <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getLiving().color)">
@@ -68,5 +65,5 @@
       <ion-card-content *ngIf="this.MQTT.getBedroom().active == 'Yes'">
         <p>This room is currently active</p>
       </ion-card-content>
-    </ion-card>
+  </ion-card>
 </ion-content>
