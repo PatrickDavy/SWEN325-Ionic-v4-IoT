@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      HomePage
+        Creepy Creeper
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,12 +11,11 @@
     <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getLiving().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
       <ion-card-content *ngIf="this.MQTT.getLiving().active == 'No'">
-        <p>This room was last active:</p>
+          <p><b>This room was last active:</b></p>
         <p>{{this.MQTT.getLiving().time}}</p>
       </ion-card-content>
-
       <ion-card-content *ngIf="this.MQTT.getLiving().active == 'Yes'">
-        <p>This room is currently active</p>
+          <p><b>This room is currently active</b></p>
       </ion-card-content>
     </ion-card>
 

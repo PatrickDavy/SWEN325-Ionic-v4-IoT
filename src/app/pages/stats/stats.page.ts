@@ -11,11 +11,6 @@ export class StatsPage {
   @ViewChild('barChart', null) barChart;
   @ViewChild('pieChart', null) pieChart;
 
-  private livingData = 1;
-  private kitchenData = 1;
-  private diningData = 1;
-  private toiletData = 1;
-  private bedroomData = 1;
   bars: any;
   pie: any;
   colorArray: any;
@@ -89,7 +84,10 @@ export class StatsPage {
         labels: ['living room', 'kitchen', 'dining', 'toilet', 'bedroom'],
         datasets: [{
           label: 'Viewers in millions',
-          data: [this.livingData, this.kitchenData, this.diningData, this.toiletData, this.bedroomData],
+          data: [
+              this.MQTT.getLiving().activeData, this.MQTT.getKitchen().activeData,
+            this.MQTT.getDining().activeData, this.MQTT.getToilet().activeData, this.MQTT.getBedroom().activeData
+          ],
           backgroundColor: this.colorArray, // array should have same number of elements as number of dataset
           borderColor: this.colorArray, // array should have same number of elements as number of dataset
           borderWidth: 1

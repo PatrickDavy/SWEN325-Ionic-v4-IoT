@@ -1,5 +1,7 @@
 {
   "name": "SWEN325Assignment3IoT",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -12,7 +12,9 @@
 }
 
 
-body {background: #000000;margin:50px;}
+body {
+  background: #000000;margin:50px;
+}
 
 .battery {
   position: relative;
@@ -48,4 +50,7 @@ body {background: #000000;margin:50px;}
   position: absolute;
   border-radius: 2px;
 }
-.battery.percentage {width: var(--widthvar);}
+.battery.percentage {
+  width: var(--widthvar);
+  color: black;
+}

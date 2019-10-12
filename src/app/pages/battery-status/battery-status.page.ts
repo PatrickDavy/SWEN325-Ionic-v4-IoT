@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./battery-status.page.scss'],
 })
 export class BatteryStatusPage {
+
   constructor(public MQTT: MqttService, private sanitizer: DomSanitizer) {
   }
 
