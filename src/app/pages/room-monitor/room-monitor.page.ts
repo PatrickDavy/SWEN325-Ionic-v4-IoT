@@ -12,6 +12,15 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 })
 export class RoomMonitorPage {
 
+  /**
+   * When the room is first loaded all notification handling needs to be started.
+   * Checks are made for every message gathered.
+   * @param MQTT
+   * @param sanitizer
+   * @param plt
+   * @param localNotifications
+   * @param alertCtrl
+   */
   constructor(public MQTT: MqttService, public sanitizer: DomSanitizer, private plt: Platform,
               private localNotifications: LocalNotifications, private alertCtrl: AlertController) {
     this.plt.ready().then(() => {
@@ -27,6 +36,7 @@ export class RoomMonitorPage {
     });
     this.scheduleNotification();
 
+    // For every second a check is made to ensure room activity.
     const source = interval(1000);
     source.subscribe(() => {
       if (this.MQTT.getDeadRoomInfo().Flag === true) {
@@ -44,7 +54,7 @@ export class RoomMonitorPage {
     this.localNotifications.schedule({
       id: 1,
       title: 'Attention',
-      text: 'The cunt is dead in ' + this.MQTT.getDeadRoomInfo().Name + '\n(╯°□°）╯︵ ┻━┻',
+      text: 'The room has gone inactive in ' + this.MQTT.getDeadRoomInfo().Name + '\n(╯°□°）╯︵ ┻━┻',
     });
     this.MQTT.resetTimer();
   }

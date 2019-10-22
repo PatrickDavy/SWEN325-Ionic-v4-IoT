@@ -19,6 +19,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+      // Import notifications to be presented to the user.
       LocalNotifications
   ],
   bootstrap: [AppComponent]

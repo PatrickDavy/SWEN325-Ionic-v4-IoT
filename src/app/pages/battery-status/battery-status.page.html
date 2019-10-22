@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
+<!--Dynamicaly gathers information and renders a background colour dependent on status for all rooms-->
   <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getLiving().color)">
     <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
     <div class="battery percentage" [style]="getDynamicBatteryPercentage(this.MQTT.getLiving().batteryStatus / 100 * 72 +'px')"></div>

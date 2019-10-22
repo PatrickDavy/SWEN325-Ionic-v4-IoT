@@ -23,6 +23,9 @@ export class StatsPage {
     this.createPieChart();
   }
 
+  /**
+   * Line chart displays a history of battery percentages
+   */
   createLineChart() {
     this.bars = new Chart(this.barChart.nativeElement, {
       type: 'line',
@@ -77,6 +80,9 @@ export class StatsPage {
     });
   }
 
+  /**
+   * Pie chart displays which rooms are most active
+   */
   createPieChart() {
     this.pie = new Chart(this.pieChart.nativeElement, {
       type: 'doughnut',
@@ -96,6 +102,10 @@ export class StatsPage {
     });
   }
 
+  /**
+   * Randomises colour values.
+   * @param num
+   */
   generateColorArray(num) {
     this.colorArray = [];
     for (let i = 0; i < num; i++) {

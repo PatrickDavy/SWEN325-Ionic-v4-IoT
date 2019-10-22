@@ -8,60 +8,61 @@
 <ion-content>
     <p>Most Recent Location: {{this.MQTT.getRecentLocation()}}</p>
 
+<!--    Dynamically displays relevant information for all pages according to room staus values for all rooms-->
     <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getLiving().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getLiving().image></ion-img>
-      <ion-card-content *ngIf="this.MQTT.getLiving().active == 'No'">
-          <p><b>This room was last active:</b></p>
+      <ion-card-content class="text" *ngIf="this.MQTT.getLiving().active == 'No'">
+          <p>This room was last active:></p>
         <p>{{this.MQTT.getLiving().time}}</p>
       </ion-card-content>
-      <ion-card-content *ngIf="this.MQTT.getLiving().active == 'Yes'">
-          <p><b>This room is currently active</b></p>
+      <ion-card-content class="text" *ngIf="this.MQTT.getLiving().active == 'Yes'">
+          <p>This room is currently active</p>
       </ion-card-content>
     </ion-card>
 
   <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getKitchen().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getKitchen().image></ion-img>
-    <ion-card-content *ngIf="this.MQTT.getKitchen().active == 'No'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getKitchen().active == 'No'">
         <p>This room was last active:</p>
         <p>{{this.MQTT.getKitchen().time}}</p>
       </ion-card-content>
 
-    <ion-card-content *ngIf="this.MQTT.getKitchen().active == 'Yes'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getKitchen().active == 'Yes'">
       <p>This room is currently active</p>
     </ion-card-content>
     </ion-card>
 
   <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getDining().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getDining().image></ion-img>
-    <ion-card-content *ngIf="this.MQTT.getDining().active == 'No'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getDining().active == 'No'">
         <p>This room was last active:</p>
         <p>{{this.MQTT.getDining().time}}</p>
       </ion-card-content>
 
-    <ion-card-content *ngIf="this.MQTT.getDining().active == 'Yes'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getDining().active == 'Yes'">
       <p>This room is currently active</p>
     </ion-card-content>
     </ion-card>
 
   <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getToilet().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getToilet().image></ion-img>
-    <ion-card-content *ngIf="this.MQTT.getToilet().active == 'No'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getToilet().active == 'No'">
         <p>This room was last active:</p>
         <p>{{this.MQTT.getToilet().time}}</p>
       </ion-card-content>
-    <ion-card-content *ngIf="this.MQTT.getToilet().active == 'Yes'">
+    <ion-card-content class="text" *ngIf="this.MQTT.getToilet().active == 'Yes'">
       <p>This room is currently active</p>
     </ion-card-content>
     </ion-card>
 
   <ion-card class="dynamic-card" [style]="getDynamicCardColour(this.MQTT.getBedroom().color)">
       <ion-img class="imgSize" [src]=this.MQTT.getBedroom().image></ion-img>
-      <ion-card-content *ngIf="this.MQTT.getBedroom().active == 'No'">
+      <ion-card-content class="text" *ngIf="this.MQTT.getBedroom().active == 'No'">
         <p>This room was last active:</p>
         <p>{{this.MQTT.getBedroom().time}}</p>
       </ion-card-content>
 
-      <ion-card-content *ngIf="this.MQTT.getBedroom().active == 'Yes'">
+      <ion-card-content class="text" *ngIf="this.MQTT.getBedroom().active == 'Yes'">
         <p>This room is currently active</p>
       </ion-card-content>
   </ion-card>

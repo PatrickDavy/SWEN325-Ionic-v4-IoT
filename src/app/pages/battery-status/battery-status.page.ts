@@ -12,10 +12,17 @@ export class BatteryStatusPage {
   constructor(public MQTT: MqttService, private sanitizer: DomSanitizer) {
   }
 
+  /**
+   * Get the appropriate colour dependent on room status
+   * @param colour
+   */
   getDynamicCardColour(colour) {
     return this.sanitizer.bypassSecurityTrustStyle(`--myvar: ${colour}`);
   }
-
+  /**
+   * Get the appropriate colour dependent on battery status
+   * @param percentage
+   */
   getDynamicBatteryPercentage(percentage) {
     return this.sanitizer.bypassSecurityTrustStyle(`--widthvar: ${percentage}`);
   }

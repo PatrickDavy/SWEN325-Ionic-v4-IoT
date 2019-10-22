@@ -1,4 +1,5 @@
 .dynamic-card{
+  //Is a colour variable based upon room status
   background-color: var(--colourvar);
   height: 105px
 }
@@ -13,4 +14,9 @@
 
 .text-position {
   padding-top: 10px;
+}
+
+.text {
+  font-weight: bold;
+  color: black;
 }
